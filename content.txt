@@ -18,6 +18,15 @@ Steps:
 1. Trên nhánh cha master thực hiện tạo commit đầu tiên
 2. Tạo nhánh A, tạo PR lên nhánh master. Change file1.js, file3.js. Commit "Commit từ nhánh A"
 3. Tạo nhánh B, tạo PR lên nhánh master. Change file2.js, file3.js. Chỉnh y nguyên nội dung file3.js như file ở nhánh A. Commit "Commit từ nhánh B"
+4. Merge nhánh A lên trước. Xong check PR nhánh B rồi nhận xét
+=> Nhánh B vẫn có thể merge được
 
-4. Thực hiện merge lên từ nhánh B như bình thường và xem kết quả
+Hiện tại chân của A đang ở file3
+5. Thực hiện merge nhánh B
+=> Changes của file3 hiện tại vẫn lấy từ nhánh A!!
+
+
+Bài học rút ra:
+1. Chậm commit vẫn có thể merge lên được nếu như không bị conflict
+2. Nếu 2 file tương tự nhau thì git sẽ giữ commit của nhánh cha
 

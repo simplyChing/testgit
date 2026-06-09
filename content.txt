@@ -1,0 +1,23 @@
+Q. Cho 2 nhánh A, B. Nếu 2 nhánh mà có cùng changes, nhánh A đẩy lên nhánh cha changes đó. Nhánh B cũng đẩy lên nhánh cha sau nhánh A. 
+Khi tạo PR, changes của nhánh B sẽ bị remove
+
+Thì:
+1. Tại sao nhánh B phải pull về? (ngoài lí do chậm commit ra)
+2. Nếu nhánh B không pull về, cứ merge lên thì sao? Có merge lên được không? Kết quả chân commit thuộc về commit nào
+
+Setup:
+Testfolder
+- file1.js
+- file2.js
+- file3.js
+
+Input:
+Repo rỗng
+
+Steps:
+1. Trên nhánh cha master thực hiện tạo commit đầu tiên
+2. Tạo nhánh A, tạo PR lên nhánh master. Change file1.js, file3.js. Commit "Commit từ nhánh A"
+3. Tạo nhánh B, tạo PR lên nhánh master. Change file2.js, file3.js. Chỉnh y nguyên nội dung file3.js như file ở nhánh A. Commit "Commit từ nhánh B"
+
+4. Thực hiện merge lên từ nhánh B như bình thường và xem kết quả
+
